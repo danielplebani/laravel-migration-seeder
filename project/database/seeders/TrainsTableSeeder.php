@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use App\Models\Train;
 
-class TrainTableSeeder extends Seeder
+class TrainsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -20,10 +20,10 @@ class TrainTableSeeder extends Seeder
             $train->company =  $faker->word();
             $train->departure_station = $faker->city();
             $train->arrival_station = $faker->city();
-            $train->departure_time = $faker->dateTimeBetween('now', '+2 week');
-            $train->arrival_time = $faker->dateTimeBetween('now', '+2 week');
+            $train->departure_time = $faker->time();
+            $train->arrival_time = $faker->time();
             $train->train_code = $faker->bothify('???-###');
-            $train->carriages = $faker->numberBetween(2, 30);
+            $train->carriages = $faker->numberBetween(2, 20);
             $train->on_time = $faker->boolean();
             $train->deleted = $faker->boolean();
             $train->save();

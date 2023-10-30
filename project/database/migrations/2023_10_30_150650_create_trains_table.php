@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('train', function (Blueprint $table) {
+        Schema::create('trains', function (Blueprint $table) {
             $table->id();
             $table->string('company', 20)->nullable();
             $table->string('departure_station', 30)->nullable();
             $table->string('arrival_station', 30)->nullable();
-            $table->dateTime('departure time')->nullable();
-            $table->dateTime('arrival time')->nullable();
+            $table->dateTime('departure_time')->nullable();
+            $table->dateTime('arrival_time')->nullable();
             $table->string('train_code')->nullable();
             $table->tinyInteger('carriages');
             $table->boolean('on_time')->default(1)->nullable();

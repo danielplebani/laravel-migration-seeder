@@ -10,7 +10,6 @@ class PageController extends Controller
 {
     public function index()
     {
-        $trains = Train::all();
-        return view('welcome', compact('all_trains'));
+        return view('welcome', ['trains'=> Train::all()]);
     }
 }
